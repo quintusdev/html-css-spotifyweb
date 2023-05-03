@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* LAYOUT UTILITIES */
+    body {
+        min-width: 500px;
+        font-family: 'Montserrat', sans-serif;
+        color: rgb(255, 255, 255);
+    }
+
+    /* SETTING SFONDO GENERALE */
+    #sfondo-gen {
+        width: 100%; 
+        height: 100vh;
+        background: black;
+    }
+    /* FINE SETTING SFONDO GENERALE */
