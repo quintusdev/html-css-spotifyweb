@@ -11,23 +11,6 @@
         color: rgb(255, 255, 255);
     }
 
-    p {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.4);
-    }
-
-    .menu-lista {
-        list-style: none;
-        font-size: 13px;
-        line-height: 35px;
-        background-color: #1400ff;
-    }
-    
-    .menu-inline li{
-        display: inline-block;
-        margin: 10px;
-    }
-
     /* SETTING SFONDO GENERALE */
     #sfondo-gen {
         width: 100%; 
@@ -35,6 +18,23 @@
         background: black;
     }
     /* FINE SETTING SFONDO GENERALE */
+
+    p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .menu-list {
+        list-style: none;
+        font-size: 13px;
+        line-height: 35px;
+    }
+    
+    .menu-inline li{
+        display: inline-block;
+        margin: 10px;
+    }
+
 /* FINE LAYOUT UTILITIES */
 
 /* INIZIO MAIN */
@@ -75,19 +75,19 @@
         background-color: black;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-lista li {
+    main nav.main-nav .nav-top .nav-main-menu .menu-list li {
         padding-left: 17px;
         border-left: 3px solid transparent;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-lista li.active {
+    main nav.main-nav .nav-top .nav-main-menu .menu-list li.active {
         border-left: 3px solid greenyellow;
     }
-    main nav.main-nav .nav-top .nav-main-menu .menu-lista li.active a{
+    main nav.main-nav .nav-top .nav-main-menu .menu-list li.active a{
         color: white;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-lista img {
+    main nav.main-nav .nav-top .nav-main-menu .menu-list img {
         height: 26px;
         margin-right: 5px;
         vertical-align: middle;
@@ -98,7 +98,7 @@
         overflow: hidden;
     }
 
-    main nav.main-nav .nav-top .nav-playlist .menu-lista{
+    main nav.main-nav .nav-top .nav-playlist .menu-list{
         height: 80%;
         overflow-y: auto;
     }
@@ -109,8 +109,63 @@
         text-transform: uppercase;
     }
 
-    /* FINE INIZIO MAIN NAV */
+    main nav.main-nav .nav-top .nav-playlist .add-playlist {
+        margin-bottom: 10px;
+        display: block;
+        font-size: 15px;
+        line-height: 37px;
+    }
+    main nav.main-nav .nav-top .nav-playlist .add-playlist span:before {
+        display: inline-block;
+        width: 37px;
+        height: 37px;
+        margin-right: 10px;
+        background-color: rgba(255, 255, 255, 0.6);
+        font-size: 35px;
+        text-align: center;
+        line-height: 37px;
+        vertical-align: middle;
+        color: black;
+    }
+    main nav.main-nav .nav-top .nav-playlist .add-playlist:hover span:before {
+        background-color: rgba(255, 255, 255, 1);
+    }
 
+    main nav.main-nav .nav-bottom .app-download a, main nav.main-nav .nav-bottom .user {
+        display: flex;
+        align-items: center;
+    }
+
+    main nav.main-nav .nav-bottom .app-download {
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    main nav.main-nav .nav-bottom .app-download a {
+        font-size: 13px;
+    }
+    main nav.main-nav .nav-bottom .app-download img {
+        width: 15px;
+        margin-right: 10px;
+    }
+    
+    main nav.main-nav .nav-bottom .user .user-avatar {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        background: grey;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    main nav.main-nav .nav-bottom .user .user-avatar img{
+        width: 100%;
+    }
+
+    main nav.main-nav .nav-bottom .user .user-name {
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+    }
+    /* FINE MAIN NAV */
     
 /* FINE MAIN */
 
@@ -165,6 +220,7 @@
     }
     /* FINE SETTING LINK A */
 /* FINE MAIN CONTENT */
+
 /* INIZIO MAIN NAV */
     main nav.main-nav .nav-top {
         display: flex;
@@ -195,121 +251,209 @@
         text-align: center;
         padding: 5px;
     }
+
     main nav.main-nav .nav-top .nav-logo-mobile img{
         width: 70%;
     }
+
+    main nav.main-nav .nav-top .nav-playlist h2 {
+        margin-bottom: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    
 /* FINE MAIN NAV */
 
-/* INIZIO COVERS */
-    main #content .covers .covers-row {
-        margin: 20px;
-    }
+    /* INIZIO COVERS */
+        main #content .covers .covers-row {
+            margin: 20px;
+        }
 
-    main #content .covers .covers-list {
-        display: flex;
-        margin: 30px 0;
-    }
-/* FINE COVERS */
+        main #content .covers .covers-list {
+            display: flex;
+            margin: 30px 0;
+        }
+
+        main #content .covers .covers-row > p{ 
+            margin-top: 10px;
+        }
+
+        main #content .covers .covers-row > p{ 
+            margin-top: 10px;
+        }
+
+        main #content .covers .covers-list .cover-item {
+            flex-shrink: 0;
+            width: calc(100% / 6 - 15px);
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        main #content .covers .covers-list .cover-item .cover-container {
+            position: relative;
+            display: flex;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        main #content .covers .covers-list .cover-item .cover-container .cover-layover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            font-size: 60px;
+        }
+
+        main #content .covers .covers-list .cover-item .cover-container .cover-layover i{
+            display: none;
+        }
+
+        main #content .covers .covers-list .cover-item:hover .cover-container .cover-layover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        main #content .covers .covers-list .cover-item:hover .cover-container .cover-layover i {
+            display: inline;
+        }
+
+        main #content .covers .covers-list .cover-item .cover-text{
+            text-align: center;
+        }
+
+        main #content .covers .covers-list .cover-item .cover-text h3{
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        main #content .covers .covers-list .cover-item .cover-container img{
+            max-width: 100%;
+        }
+
+        main #content .covers #popular .cover-item .cover-container img{
+            border-radius: 100%;
+        }
+
+        main #content .covers #popular .cover-item .cover-container {
+            border-radius: 100%;
+            overflow: hidden;
+        }
+        
+    /* FINE COVERS */
 
 /* FINE MAIN */
 
 /* INIZIO BOTTOM-BAR */
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    height: 90px;
-    background: #282828;
-  }
-  footer #player {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-    /* INIZIO PLAYER ALBUM */
-    footer #player .player-album, footer #player .player-audio {
-        width: 230px;
-        height: 100%;
-        padding: 10px;
-    }
-
-    footer #player .player-album {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    footer #player .player-album .player-album-cover {
-        width: 20%;
-    }
-
-    footer #player .player-album .player-album-cover img {
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
         width: 100%;
+        height: 90px;
+        background: #282828;
     }
-
-    footer #player .player-album .player-album-title {
-        width: 50%;
-        padding-left: 10px;
-    }
-
-    footer #player .player-album .player-album-title h2 {
-        font-size: 12px;
-        line-height: 12px;
-    }
-
-    footer #player .player-album .player-album-title h2 a{
-        color: rgba(255, 255, 255, 1);
-    }
-
-    footer #player .player-album .player-album-title p {
-        font-size: 10px;
-    }
-
-    footer #player .player-album .player-icons i{
-        margin-left: 5px;
-    }
-
-    /* FINE PLAYER ALBUM */
-
-    /* INIZIO PLAYER CONTROLLER */
-    footer #player .player-controller {
-        width: 40%;
-        height: 100%;
-        background-color: green;
-    }
-
-    footer #player .player-controller .player-controller-icons {
-        height: 60%;
-        background-color: blue;
-    }
-
-    footer #player .player-controller .player-controller-icons ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
-    /* FINE PLAYER CONTROLLER */
-
-    /* CONTROLLER TEMPO BRANO*/
-    footer #player .player-controller .time-control {
+    footer #player {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        height: 100%;
     }
-    footer #player .player-controller .time-control .time-control-min {
-        width: 10%;
-        margin: 0 10px;
-        font-size: 10px;
-        text-align: center;
-    }
+
+    /* INIZIO PLAYER ALBUM */
+        footer #player .player-album, footer #player .player-audio {
+            width: 230px;
+            height: 100%;
+            padding: 10px;
+        }
+
+        footer #player .player-album {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer #player .player-album .player-album-cover {
+            width: 20%;
+        }
+
+        footer #player .player-album .player-album-cover img {
+            width: 100%;
+        }
+
+        footer #player .player-album .player-album-title {
+            width: 50%;
+            padding-left: 10px;
+        }
+
+        footer #player .player-album .player-album-title h2 {
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        footer #player .player-album .player-album-title h2 a{
+            color: rgba(255, 255, 255, 1);
+        }
+
+        footer #player .player-album .player-album-title p {
+            font-size: 10px;
+        }
+
+        footer #player .player-album .player-icons i{
+            margin-left: 5px;
+        }
+
+    /* FINE PLAYER ALBUM */
+
+    /* INIZIO PLAYER CONTROLLER */
+        footer #player .player-controller {
+            width: 40%;
+            height: 100%;
+        }
+
+        footer #player .player-controller .player-controller-icons {
+            height: 60%;
+        }
+
+        footer #player .player-controller .player-controller-icons ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        footer #player .player-controller .player-controller-icons i{
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        footer #player .player-controller .player-controller-icons .player-controller-play-ico i{
+            width: 50px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        footer #player .player-controller .player-controller-icons .player-controller-play-ico:hover i{
+            font-size: 32px;
+        }
+    /* FINE PLAYER CONTROLLER */
+
+    /* CONTROLLER TEMPO BRANO*/
+        footer #player .player-controller .time-controller {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        footer #player .player-controller .time-controller .time-controller-min {
+            width: 10%;
+            margin: 0 10px;
+            font-size: 10px;
+            text-align: center;
+        }
     /* FINE CONTROLLER TEMPO BRANO*/
 
     /* INIZIO LAYOUT CONTROLLER AUDIO*/
@@ -320,20 +464,56 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        footer #player .player-bar .control-bar {
+        footer #player .player-bar .controller-bar {
             position: relative;
             height: 100%;
             border-radius: 4px;
             background-color: rgba(255, 255, 255, 0.6);
         }
-        footer #player .player-bar .control-bar-point {
+
+        footer #player .player-bar .controller-bar-point {
             width: 20%;
         }
 
-        footer #player .player-bar:hover .control-bar {
+        footer #player .player-bar:hover .controller-bar {
             background-color: greenyellow;
         }
+
+        footer #player .player-bar:hover .controller-bar .controller-bar-point {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        footer #player .player-album .player-album-title a:hover {
+            text-decoration: underline;
+            color: rgba(255, 255, 255, 1);
+        }
+
     /* FINE LAYOUT CONTROLLER AUDIO*/
+    
+    /* INIZIO CONTROLLER AUDIO */
+    footer #player .player-audio ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    footer #player .player-audio .player-audio-volume {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* FINE CONTROLLER AUDIO */
+
 /* FINE BOTTOM-BAR */
 
 /* MEDIA QUERY */
@@ -355,15 +535,81 @@
         main #content {
             padding-left: 50px;
         }
+
+        main nav.main-nav .nav-bottom {
+            padding: 0;
+            align-items: center;
+        }
+
+        main nav.main-nav .nav-bottom .app-download {
+            text-align: center;
+            border: 0;
+            padding: 0;
+        }
+
+        main nav.main-nav .nav-bottom .app-download span{
+            display: none;
+        }
+
+        main nav.main-nav .nav-bottom .app-download img {
+            margin: 0;
+        }
+
+        main nav.main-nav .nav-bottom .user .user-avatar {
+            margin-right: 0;
+        }
+
+        main nav.main-nav .nav-bottom .user .user-name {
+            display: none;
+        }
+
+        main nav.main-nav .nav-top .nav-logo {
+            display: none;
+        }
+
+        main nav.main-nav .nav-top .nav-logo-mobile {
+            display: block;
+        }
+  
+        main nav.main-nav .nav-top .nav-main-menu .menu-list {
+            text-align: center;
+        }
+  
+        main nav.main-nav .nav-top .nav-main-menu .menu-list li {
+            border: 0;
+            padding-left: 0;
+        }
+  
+        main nav.main-nav .nav-top .nav-main-menu .menu-list li a span {
+            display: none;
+        }
+  
+        main nav.main-nav .nav-top .nav-main-menu .menu-list li.active {
+            border: 0;
+        }
+  
+        main nav.main-nav .nav-top .nav-main-menu .menu-list img {
+            margin: 0;
+        }
     }
 
     /* TABLET */
     @media screen and (max-width: 700px) {
-
+        main #content .covers .covers-list .cover-item {
+            width: calc(100% / 2 - 20px);
+            margin-right: 10px;
+        }
     }
 
     /* DESKTOP */
     @media screen and (max-width: 1100px) {
-
+        main #content .covers .covers-list .cover-item {
+            width: calc(100% / 4 - 20px);
+            margin-right: 10px;
+        }
+          
+        main #content .covers .covers-list {
+            flex-wrap: wrap;
+        }
     }
 /* FINE MEDIA QUERY */
