@@ -16,10 +16,11 @@
         color: rgba(255, 255, 255, 0.4);
     }
 
-    .menu-list {
+    .menu-lista {
         list-style: none;
         font-size: 13px;
         line-height: 35px;
+        background-color: #1400ff;
     }
     
     .menu-inline li{
@@ -74,19 +75,19 @@
         background-color: black;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-list li {
+    main nav.main-nav .nav-top .nav-main-menu .menu-lista li {
         padding-left: 17px;
         border-left: 3px solid transparent;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-list li.active {
+    main nav.main-nav .nav-top .nav-main-menu .menu-lista li.active {
         border-left: 3px solid greenyellow;
     }
-    main nav.main-nav .nav-top .nav-main-menu .menu-list li.active a{
+    main nav.main-nav .nav-top .nav-main-menu .menu-lista li.active a{
         color: white;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-list img {
+    main nav.main-nav .nav-top .nav-main-menu .menu-lista img {
         height: 26px;
         margin-right: 5px;
         vertical-align: middle;
@@ -97,9 +98,15 @@
         overflow: hidden;
     }
 
-    main nav.main-nav .nav-top .nav-playlist .menu-list{
+    main nav.main-nav .nav-top .nav-playlist .menu-lista{
         height: 80%;
         overflow-y: auto;
+    }
+
+    main nav.main-nav .nav-top .nav-playlist h2 {
+        margin-bottom: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
     }
 
     /* FINE INIZIO MAIN NAV */
@@ -114,15 +121,8 @@
         overflow-x: hidden;
         background: #141922;
     }
-
-    main #content {
-        width: 100%;
-        padding-left: 230px;
-        overflow-x: hidden;
-        background: #141922;
-      }
       
-      main #content .col {
+    main #content .col {
         position: fixed;
         z-index: 1;
         width: calc(100% - 230px);
@@ -130,8 +130,9 @@
         padding: 20px;
         background-color: rgba(0, 0, 0, 0.4);
         text-align: right;
-      }
-/* SETTING LINK A */
+    }
+
+    /* SETTING LINK A */
     a { 
         text-decoration: none;
         color: rgba(255, 255, 255, 0.4);
@@ -162,8 +163,8 @@
     a.btn:hover, a.btn:active, a.btn:focus {
         transform: scale(1.1);
     }
-/* FINE SETTING LINK A */
-
+    /* FINE SETTING LINK A */
+/* FINE MAIN CONTENT */
 /* INIZIO MAIN NAV */
     main nav.main-nav .nav-top {
         display: flex;
@@ -198,6 +199,18 @@
         width: 70%;
     }
 /* FINE MAIN NAV */
+
+/* INIZIO COVERS */
+    main #content .covers .covers-row {
+        margin: 20px;
+    }
+
+    main #content .covers .covers-list {
+        display: flex;
+        margin: 30px 0;
+    }
+/* FINE COVERS */
+
 /* FINE MAIN */
 
 /* INIZIO BOTTOM-BAR */
