@@ -223,7 +223,6 @@
         width: 230px;
         height: 100%;
         padding: 10px;
-        background-color: aquamarine;
     }
 
     footer #player .player-album {
@@ -234,12 +233,32 @@
 
     footer #player .player-album .player-album-cover {
         width: 20%;
-        background-color: blueviolet;
     }
 
     footer #player .player-album .player-album-cover img {
         width: 100%;
-        background-color: cornflowerblue;
+    }
+
+    footer #player .player-album .player-album-title {
+        width: 50%;
+        padding-left: 10px;
+    }
+
+    footer #player .player-album .player-album-title h2 {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    footer #player .player-album .player-album-title h2 a{
+        color: rgba(255, 255, 255, 1);
+    }
+
+    footer #player .player-album .player-album-title p {
+        font-size: 10px;
+    }
+
+    footer #player .player-album .player-icons i{
+        margin-left: 5px;
     }
 
     /* FINE PLAYER ALBUM */
@@ -279,5 +298,59 @@
         text-align: center;
     }
     /* FINE CONTROLLER TEMPO BRANO*/
+
+    /* INIZIO LAYOUT CONTROLLER AUDIO*/
+        footer #player .player-bar {
+            width: 80%;
+            height: 4px;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        footer #player .player-bar .control-bar {
+            position: relative;
+            height: 100%;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        footer #player .player-bar .control-bar-point {
+            width: 20%;
+        }
+
+        footer #player .player-bar:hover .control-bar {
+            background-color: greenyellow;
+        }
+    /* FINE LAYOUT CONTROLLER AUDIO*/
 /* FINE BOTTOM-BAR */
 
+/* MEDIA QUERY */
+    
+    /* MOBILE */
+    @media screen and (max-width: 600px) {
+        main nav.main-nav {
+            width: 50px;
+        }
+
+        main nav.main-nav .nav-top .nav-playlist {
+            display: none;
+        }
+
+        main #content .col {
+            width: calc(100% - 50px);
+        }
+
+        main #content {
+            padding-left: 50px;
+        }
+    }
+
+    /* TABLET */
+    @media screen and (max-width: 700px) {
+
+    }
+
+    /* DESKTOP */
+    @media screen and (max-width: 1100px) {
+
+    }
+/* FINE MEDIA QUERY */
