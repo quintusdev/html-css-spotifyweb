@@ -22,14 +22,126 @@
     <div id="sfondo-gen">
     <!-- main -->
     <main>
+      <!-- INIZIO NAV -->
+      <nav class="main-nav">
+        <!-- NAV-TOP -->
+          <section class="nav-top">
+            <!-- LOGO -->
+            <div class="nav-logo">
+              <img src="./img/logo.svg" alt="Spotify">
+            </div>
+            <!-- FINE LOGO -->
+            <!-- LOGO MOBILE -->
+            <div class="nav-logo-mobile">
+              <img src="./img/logo-small.svg" alt="Spotify">
+            </div>
+            <!-- FINE MOBILE LOGO -->
+            <!-- SEZIONE NAV-BAR MENU -->
+            <section class="nav-main-menu">
+              <ul class="menu-list">
+                <li class="active"> <a href="#"> <img src="./img/home.svg" alt="Home"><span>Home</span></a></li>
+                <li><a href="#"><img src="./img/search.svg" alt="Cerca"><span>Cerca</span></a></li>
+                <li><a href="#"><img src="./img/libreria.svg" alt="Libreria"><span>La tua libreria</span></a></li>
+              </ul>
+            </section>
+            <!-- FINE SEZIONE NAV-BAR MENU -->
+          
+            <!-- PLAYLIST -->
+            <section class="nav-playlist">
+              <h2>Playlist</h2>
+              <a href="#" class="add-playlist"><span>Crea Playlist</span></a>
+              <ul class="menu-list">
+                <li><a href="#">Nome Playlist</a></li>
+                <li><a href="#">Nome Playlist</a></li>
+                <li><a href="#">Nome Playlist</a></li>
+                <li><a href="#">Nome Playlist</a></li>
+                <li><a href="#">Nome Playlist</a></li>
+                <li><a href="#">Nome Playlist</a></li>
+                <li><a href="#">Nome Playlist</a></li>
+              </ul>
+            </section>
+          <!-- FINE PLAYLIST -->
+        </section>
+        <!-- FINE NAV-TOP -->
+
+        <!-- INIZIO NAV BOTTOM -->
+        <section class="nav-bottom">
+          <div class="app-download">
+            <a href="#"><img src="./img/download.svg" alt=""><span>Installa app</span></a>
+          </div>
+          <div class="user">
+            <div class="user-avatar"><img src="./img/profile.svg" alt=""></div>
+            <h2 class="user-name">John Doe</h2>
+          </div>
+        </section>
+        <!-- FINE NAV-BOTTOM -->
+      </nav>
+      <!-- FINE NAV -->
+
+      <!-- CONTENUTO -->
+      <section id="content">
+          <div class="col">
+            <a href="#" class="btn">Effettua l'upgrade</a>
+          </div>
+          <nav class="main-content-nav">
+            <ul class="menu-list menu-inline">
+              <li><a href="#" class="active">IN EVIDENZA</a></li>
+              <li><a href="#">PODCAST</a></li>
+              <li><a href="#">CLASSIFICHE</a></li>
+              <li><a href="#">GENERI E MOOD</a></li>
+              <li><a href="#">NUOVE USCITE</a></li>
+              <li><a href="#">SCOPRI</a></li>
+            </ul>
+          </nav>
+      </section>
+      <!-- FINE CONTENUTO -->
+
     </main>
     <!-- FINE MAIN -->
 
-    <!-- INIZIO FOOTER -->
+     <!-- INIZIO BOTTOM-BAR -->
     <footer>
+      <section id="player">
+        <!-- ALBUM -->
+        <div class="player-album">
+          <div class="player-album-cover">
+            <img src="./img/sinister.jpeg" alt="">
+          </div>
+          <div class="player-album-title">
+            <h2><a href="#">Sinister</a></h2>
+            <p><a href="#">Brano Nome</a></p>
+          </div>
+          <div class="player-icons">
+            <a href="#"><i class="far fa-heart"></i></a>
+            <a href="#"><i class="far fa-folder"></i></a>
+          </div>
+        </div>
+        <!-- FINE ALBUM -->
 
+        <!-- INIZIO CONTROLLER RIPRODUZIONE -->
+        <div class="player-controller">
+          <!-- ICONE CONTROLLER -->
+          <div class="player-controller-icons">
+            <ul class="menu-list">
+              <li><i class="fas fa-random"></i></li>
+              <li><i class="fas fa-step-backward"></i></li>
+              <li class="player-controller-play-ico"><i class="far fa-play-circle"></i></li>
+              <li><i class="fas fa-step-forward"></i></li>
+              <li><i class="fas fa-redo-alt"></i></li>
+            </ul>
+          </div>
+        <!-- FINE ICONE CONTROLLER -->
+        </div>
+        <!-- FINE CONTROLLER RIPRODUZIONE -->
+
+        <!-- BARRA TEMPO -->
+        <div class="time-control">
+          <div class="time-control-min">0:25</div>
+          <div class="time-control-min">4:35</div>
+        </div>
+      </section>
     </footer>
-    <!-- FINE FOOTER -->
+    <!-- FINE BOTTOM-BAR -->
   </div>
   <!-- FINE SFONDO GENERALE -->
 </body>
