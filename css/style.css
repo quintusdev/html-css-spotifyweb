@@ -4,6 +4,8 @@
     box-sizing: border-box;
   }
   
+  /* le dichiarazioni del CSS sono state messe in maniera da andare in modo specifico in ogni elemento */
+
 /* LAYOUT UTILITIES */
     body {
         min-width: 500px;
@@ -28,13 +30,14 @@
         opacity: 0.8;
     }
 
-    a:hover, a:active, a:focus { 
+    a:hover, a.select, a:focus { 
         color: rgba(255, 255, 255, 1);
     }
     
-    a:hover img, a:active img, a:focus img { 
+    a:hover img, a.select img, a:focus img { 
         opacity: 1;
     }
+
     a.btn {
         display: inline-block;
         padding: 10px 40px;
@@ -46,8 +49,8 @@
         text-transform: uppercase;
     }
 
-    a.btn:hover, a.btn:active, a.btn:focus {
-        transform: scale(1.1);
+    a.btn:hover, a.btn.select, a.btn:focus {
+        transform: scale(1.2);
     }
     
     p {
@@ -70,23 +73,22 @@
 /* INIZIO MAIN */
   
 /* INIZIO NAV */
-    main #content .main-content-nav {
+    main #content .content-nav {
         width: 100%;
         margin-top: 90px;
         text-align: center;
     }
 
-    main #content .main-content-nav a {
+    main #content .content-nav a {
         position: relative;
         padding-bottom: 5px;
     }
 
-    main #content .main-content-nav a.active:after {
+    main #content .content-nav a.select:after {
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        content: '';
         display: block;
         height: 2px;
         width: 30px;
@@ -130,20 +132,20 @@
         width: 70%;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-list li {
+    main nav.main-nav .nav-top .nav-menu .menu-list li {
         padding-left: 17px;
         border-left: 3px solid transparent;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-list li.active {
+    main nav.main-nav .nav-top .nav-menu .menu-list li.select {
         border-left: 3px solid greenyellow;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-list li.active a{
+    main nav.main-nav .nav-top .nav-menu .menu-list li.select a{
         color: white;
     }
 
-    main nav.main-nav .nav-top .nav-main-menu .menu-list img {
+    main nav.main-nav .nav-top .nav-menu .menu-list img {
         height: 26px;
         margin-right: 5px;
         vertical-align: middle;
@@ -218,7 +220,7 @@
         margin-right: 10px;
     }
 
-    main nav.main-nav .nav-bottom .user .user-avatar {
+    main nav.main-nav .nav-bottom .user .user-img {
         width: 25px;
         height: 25px;
         margin-right: 10px;
@@ -226,7 +228,7 @@
         border-radius: 50%;
         overflow: hidden;
     }
-    main nav.main-nav .nav-bottom .user .user-avatar img{
+    main nav.main-nav .nav-bottom .user .user-img img{
         width: 100%;
     }
 
@@ -261,7 +263,8 @@
         text-decoration: none;
         color: rgba(255, 255, 255, 0.4);
     }
-    a:hover, a:active, a:focus { 
+
+    a:hover, a.select, a:focus { 
         color: rgba(255, 255, 255, 1);
     }
     
@@ -269,7 +272,7 @@
         opacity: 0.8;
     }
 
-    a:hover img, a:active img, a:focus img { 
+    a:hover img, a.select img, a:focus img { 
         opacity: 1;
     }
 
@@ -284,25 +287,26 @@
         text-transform: uppercase;
     }
 
-    a.btn:hover, a.btn:active, a.btn:focus {
+    a.btn:hover, a.btn.select, a.btn:focus {
         transform: scale(1.1);
     }
     /* FINE SETTING LINK A */
 /* FINE MAIN CONTENT */
 
 /* INIZIO MAIN NAV */
-    main #content .main-content-nav {
+    main #content .content-nav {
         width: 100%;
         margin-top: 90px;
         text-align: center;
     }
 
-    main #content .main-content-nav a {
+    main #content .content-nav a {
         position: relative;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
     }
 
-    main #content .main-content-nav a.active:after {
+    /* Creo una barretta vuota con solo lo sfondo sotto al menu' evidenza*/
+    main #content .content-nav a.select:after {
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -310,41 +314,46 @@
         content: '';
         display: block;
         height: 2px;
-        width: 30px;
+        width: 50px;
         background: greenyellow;
     }
     
 /* FINE MAIN NAV */
 
-    /* INIZIO COVERS */
-    main #content .covers .covers-row > p{ 
+    /* INIZIO COVER */
+    main #content .cover .cover-row > p{ 
         margin-top: 10px;
     }
 
-    main #content .covers .covers-row {
-        margin: 20px;
+    main #content .cover .cover-row {
+        margin: 30px;
     }
 
-    main #content .covers .covers-list {
+    main #content .cover .cover-list {
         display: flex;
         margin: 30px 0;
     }
 
-    main #content .covers .covers-list .cover-item {
-        flex-shrink: 0;
-        width: calc(100% / 6 - 15px);
-        margin-right: 15px;
-        cursor: pointer;
+    main #content .cover .cover-list.bottom{
+        display: flex;
+        margin-bottom: 100px;
     }
 
-    main #content .covers .covers-list .cover-item .cover-container {
+    main #content .cover .cover-list .cover-brano {
+        /*flex-shrink specifica in che modo l'elemento verrà ridotto rispetto al resto degli elementi flessibili all'interno dello stesso contenitore. */
+        flex-shrink: 2;
+        width: calc(100% / 6 - 15px);
+        margin-right: 15px;
+    }
+
+    main #content .cover .cover-list .cover-brano .cover-container {
         position: relative;
         display: flex;
-        width: 100%;
+        max-width: 100%;
         margin-bottom: 20px;
     }
 
-    main #content .covers .covers-list .cover-item .cover-container .cover-layover{
+    main #content .cover .cover-list .cover-brano .cover-container .cover-play{
         position: absolute;
         top: 0;
         left: 0;
@@ -356,40 +365,40 @@
         font-size: 60px;
     }
 
-    main #content .covers .covers-list .cover-item .cover-container .cover-layover i{
+    main #content .cover .cover-list .cover-brano .cover-container .cover-play i{
         display: none;
     }
 
-    main #content .covers .covers-list .cover-item:hover .cover-container .cover-layover {
+    main #content .cover .cover-list .cover-brano:hover .cover-container .cover-play {
         background-color: rgba(0, 0, 0, 0.5);
     }
 
-    main #content .covers .covers-list .cover-item:hover .cover-container .cover-layover i {
+    main #content .cover .cover-list .cover-brano:hover .cover-container .cover-play i {
         display: inline;
     }
 
-    main #content .covers .covers-list .cover-item .cover-text{
+    main #content .cover .cover-list .cover-brano .caption{
        text-align: center;
     }
 
-    main #content .covers .covers-list .cover-item .cover-text h3{
+    main #content .cover .cover-list .cover-brano .caption h3{
        font-size: 16px;
        line-height: 16px;
     }
 
-    main #content .covers .covers-list .cover-item .cover-container img{
+    main #content .cover .cover-list .cover-brano .cover-container img{
         max-width: 100%;
     }
 
-    main #content .covers #popular .cover-item .cover-container img{
+    main #content .cover #popular .cover-brano .cover-container img{
         border-radius: 100%;
     }
 
-    main #content .covers #popular .cover-item .cover-container {
+    main #content .cover #popular .cover-brano .cover-container {
         border-radius: 100%;
         overflow: hidden;
     }
-    /* FINE COVERS */
+    /* FINE COVER */
 
 /* FINE MAIN */
 
@@ -444,16 +453,14 @@
         }
 
         footer #player .player-album .player-album-title h2 {
-            font-size: 12px;
-            line-height: 12px;
-        }
-
-        footer #player .player-album .player-album-title h2 a{
+            font-size: 16px;
+            line-height: 15px;
             color: rgba(255, 255, 255, 1);
         }
 
         footer #player .player-album .player-album-title p {
-            font-size: 10px;
+            font-size: 12px;
+            margin-top: 10px;
         }
 
         footer #player .player-album .player-icons i{
@@ -462,82 +469,84 @@
     /* FINE PLAYER ALBUM */
 
     /* INIZIO PLAYER CONTROLLER */
-        footer #player .player-controller {
+        footer #player .player-contr {
             width: 40%;
             height: 100%;
         }
 
         /* INIZIO ICONE PLAYER CONTROLLER */
-        footer #player .player-controller .player-controller-icons {
+        footer #player .player-contr .player-icon {
             height: 60%;
         }
 
-        footer #player .player-controller .player-controller-icons ul {
+        footer #player .player-contr .player-icon ul {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
         }
 
-        footer #player .player-controller .player-controller-icons i{
+        footer #player .player-contr .player-icon i{
             margin: 10px;
             font-size: 16px;
-            cursor: pointer;
         }
 
-        footer #player .player-controller .player-controller-icons .player-controller-play-ico i{
+        footer #player .player-contr .player-icon .play-ico i{
             width: 50px;
             font-size: 30px;
             text-align: center;
         }
-
-        footer #player .player-controller .player-controller-icons .player-controller-play-ico:hover i{
-            font-size: 32px;
+        
+        /* HOVER ICONE PLAYER */
+        footer #player .player-contr .player-icon .play-ico:hover i{
+            font-size: 35px;
         }
+        /* FINE HOVER ICONE PLAYER */
+
         /* FINE ICONE PLAYER CONTROLLER */
 
         /* INIZIO CONTROLLER TEMPO BRANI*/
-        footer #player .player-controller .player-controller-time {
+        footer #player .player-contr-time {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
         }
 
-        footer #player .player-controller .player-controller-time .player-controller-time-min {
-            width: 10%;
+        footer #player .player-contr-time .time {
+            width: 5%;
             margin: 0 10px;
-            font-size: 10px;
+            font-size: 11px;
             text-align: center;
         }
         /* FINE CONTROLLER TEMPO BRANI*/
     /* FINE PLAYER CONTROLLER */
 
     /* CONTROLLER TEMPO BRANO*/
-        footer #player .player-bar {
+        footer #player .time-bar {
             width: 80%;
-            height: 4px;
-            border-radius: 4px;
+            height: 5px;
+            border-radius: 5px;
             background-color: rgba(255, 255, 255, 0.2);
-            cursor: pointer;
         }
 
-        footer #player .player-bar .controller-elapsed {
+        footer #player .time-bar .green-bar{
             position: relative;
             height: 100%;
-            border-radius: 4px;
+            border-radius: 5px;
             background-color: rgba(255, 255, 255, 0.6);
         }
 
-        footer #player .player-bar .controller-elapsed.perc-20 {
+        footer #player .time-bar .green-bar.w20 {
             width: 20%;
+            height: 5px;
         }
 
-        footer #player .player-bar:hover .controller-elapsed {
+        footer #player .time-bar:hover .green-bar {
             background-color: greenyellow;
         }
 
-        footer #player .player-bar:hover .controller-elapsed .controller-elapsed-point {
+        footer #player .time-bar:hover .green-bar .green-bar-circle {
             position: absolute;
             top: 50%;
             right: 0;
@@ -550,30 +559,30 @@
         }
     /* FINE CONTROLLER TEMPO BRANO*/
 
-    /* INIZIO LAYOUT CONTROLLER AUDIO*/
+    /* INIZIO LAYOUT PLAYER AUDIO*/
         footer #player .player-bar {
             width: 80%;
-            height: 4px;
-            border-radius: 4px;
+            height: 5px;
+            border-radius: 5px;
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        footer #player .player-bar .controller-bar {
+        footer #player .player-bar .green-bar.w20 {
             position: relative;
             height: 100%;
-            border-radius: 4px;
+            border-radius: 5px;
             background-color: rgba(255, 255, 255, 0.6);
         }
 
-        footer #player .player-bar .controller-bar-point {
+        footer #player .player-bar .green-bar.w20 {
             width: 20%;
         }
 
-        footer #player .player-bar:hover .controller-bar {
+        footer #player .player-bar:hover .green-bar.w20 {
             background-color: greenyellow;
         }
 
-        footer #player .player-bar:hover .controller-bar .controller-bar-point {
+        footer #player .player-bar:hover .green-bar.w20 .green-bar-circle {
             position: absolute;
             top: 50%;
             right: 0;
@@ -599,7 +608,7 @@
             align-items: center;
             height: 100%;
         }
-        footer #player .player-audio .player-audio-volume {
+        footer #player .player-audio .audio-volume {
             width: 70%;
             display: flex;
             align-items: center;
@@ -611,105 +620,118 @@
 
 /* MEDIA QUERY */
     
-    /* MOBILE */
+    /* INIZIO QUERY MOBILE */
 
-    /* NAV MOBILE */
-    @media screen and (max-width: 600px) {
-        main nav.main-nav {
-            width: 50px;
+        /* NAV MOBILE */
+        @media screen and (max-width: 600px) {
+            main nav.main-nav {
+                width: 50px;
+            }
         }
-    }
 
-    /* NAV TOP MOBILE */
-    @media screen and (max-width: 600px) {
-        main nav.main-nav .nav-top .nav-logo {
-        display: none;
-        }
-        main nav.main-nav .nav-top .nav-logo-mobile {
-        display: block;
-        }
-    }
+        /* NAV TOP MOBILE */
+        @media screen and (max-width: 600px) {
+            main nav.main-nav .nav-top .nav-logo {
+            display: none;
+            }
 
-    /* NAV LIST MOBILE */
-    @media screen and (max-width: 600px) {
-        main nav.main-nav .nav-top .nav-main-menu .menu-list {
-        text-align: center;
+            main nav.main-nav .nav-top .nav-logo-mobile {
+            display: block;
+            }
         }
-        main nav.main-nav .nav-top .nav-main-menu .menu-list li {
-        border: 0;
-        padding-left: 0;
-        }
-        main nav.main-nav .nav-top .nav-main-menu .menu-list li a span {
-        display: none;
-        }
-        main nav.main-nav .nav-top .nav-main-menu .menu-list li.active {
-        border: 0;
-        }
-        main nav.main-nav .nav-top .nav-main-menu .menu-list img {
-        margin: 0;
-        }
-    }
 
-    /* NAV LIST MOBILE */
-    @media screen and (max-width: 600px) {
-        main nav.main-nav .nav-top .nav-playlist {
-        display: none;
-        }
-    }
-    
-    /* NAV BOTTOM MOBILE */
-    @media screen and (max-width: 600px) {
-        main nav.main-nav .nav-bottom {
-        padding: 0;
-        align-items: center;
-        }
-        main nav.main-nav .nav-bottom .app-download {
-        text-align: center;
-        border: 0;
-        padding: 0;
-        }
-        main nav.main-nav .nav-bottom .app-download span{
-        display: none;
-        }
-        main nav.main-nav .nav-bottom .app-download img {
-        margin: 0;
-        }
-    }
+        /* NAV LIST MOBILE */
+        @media screen and (max-width: 600px) {
+            main nav.main-nav .nav-top .nav-menu .menu-list {
+            text-align: center;
+            }
 
-    /* NAV AVATAR MOBILE */
-    @media screen and (max-width: 600px) {
-        main nav.main-nav .nav-bottom .user .user-avatar {
-        margin-right: 0;
-        }
-        main nav.main-nav .nav-bottom .user .user-name {
-        display: none;
-        }
-    }
+            main nav.main-nav .nav-top .nav-menu .menu-list li {
+            border: 0;
+            padding-left: 0;
+            }
 
-    /* CONTENT MOBILE */
-    @media screen and (max-width: 600px) {
-        main #content {
-          padding-left: 50px;
-        }
-    }
+            main nav.main-nav .nav-top .nav-menu .menu-list li a span {
+            display: none;
+            }
 
-    /* TABLET */
-    @media screen and (max-width: 700px) {
-        main #content .covers .covers-list .cover-item {
-            width: calc(100% / 2 - 20px);
+            main nav.main-nav .nav-top .nav-menu .menu-list li.select {
+            border: 0;
+            }
+
+            main nav.main-nav .nav-top .nav-menu .menu-list img {
+            margin: 0;
+            }
+        }
+
+        /* NAV LIST MOBILE */
+        @media screen and (max-width: 600px) {
+            main nav.main-nav .nav-top .nav-playlist {
+            display: none;
+            }
+        }
+        
+        /* NAV BOTTOM MOBILE */
+        @media screen and (max-width: 600px) {
+            main nav.main-nav .nav-bottom {
+            padding: 0;
+            align-items: center;
+            }
+
+            main nav.main-nav .nav-bottom .app-download {
+            text-align: center;
+            border: 0;
+            padding: 0;
+            }
+
+            main nav.main-nav .nav-bottom .app-download span{
+            display: none;
+            }
+
+            main nav.main-nav .nav-bottom .app-download img {
+            margin: 0;
+            }
+        }
+
+        /* NAV AVATAR MOBILE */
+        @media screen and (max-width: 600px) {
+            main nav.main-nav .nav-bottom .user .user-avatar {
+            margin-right: 0;
+            }
+
+            main nav.main-nav .nav-bottom .user .user-name {
+            display: none;
+            }
+        }
+
+        /* CONTENT MOBILE */
+        @media screen and (max-width: 600px) {
+            main #content {
+            padding-left: 50px;
+            }
+        }
+    /* FINE QUERY MOBILE */
+
+    /* INIZIO QUERY TABLET */
+        @media screen and (max-width: 700px) {
+            main #content .cover .cover-list .cover-item {
+                width: calc(100% / 2 - 10px);
+                margin-right: 10px;
+            }
+        }
+    /* FINE QUERY TABLET */
+
+    /* INIZIO QUERY DESKTOP */
+        @media screen and (max-width: 1200px) {
+            main #content .cover .cover-list .cover-item {
+            width: calc(100% / 2 - 10px);
             margin-right: 10px;
-        }
-    }
+            }
 
-    /* DESKTOP */
-    @media screen and (max-width: 1100px) {
-        main #content .covers .covers-list .cover-item {
-          width: calc(100% / 4 - 10px);
-          margin-right: 10px;
+            main #content .cover .cover-list {
+            flex-wrap: wrap;
+            }
         }
+    /* FINE QUERY DESKTOP */
 
-        main #content .covers .covers-list {
-          flex-wrap: wrap;
-        }
-      }
 /* FINE MEDIA QUERY */
